@@ -1,0 +1,11 @@
+services:
+  easyartech-sql:
+    image: mysql
+    restart: always
+    ports:
+      - "@sql.db.port@:@sql.db.port@"
+    environment:
+      MYSQL_ROOT_PASSWORD: @sql.test.root.user@
+      MYSQL_PASSWORD: @sql.test.user.password@
+      MYSQL_USER: @sql.test.user@
+      MYSQL_DATABASE: @sql.db.name@
